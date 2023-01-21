@@ -1,6 +1,5 @@
 package com.ejercicio2.dataBases.entity;
 
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;

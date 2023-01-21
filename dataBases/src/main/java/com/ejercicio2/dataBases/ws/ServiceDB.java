@@ -3,20 +3,21 @@ package com.ejercicio2.dataBases.ws;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
+import com.ejercicio2.dataBases.entity.Aplicacionplaza;
 import com.ejercicio2.dataBases.entity.Pacientemascota;
 import com.ejercicio2.dataBases.entity.Pasteles;
 import com.ejercicio2.dataBases.entity.Platillo;
+import com.ejercicio2.dataBases.entity.Plaza;
 import com.ejercicio2.dataBases.entity.Restaurante;
 import com.ejercicio2.dataBases.entity.Veterinaria;
 import com.ejercicio2.dataBases.inter.ServicioInt;
+import com.ejercicio2.dataBases.repository.AplicacionplazaRepository;
 import com.ejercicio2.dataBases.repository.PacientemascotaRepository;
 import com.ejercicio2.dataBases.repository.PastelesRepository;
 import com.ejercicio2.dataBases.repository.PlatilloRepository;
+import com.ejercicio2.dataBases.repository.PlazaRepository;
 import com.ejercicio2.dataBases.repository.RestauranteRepository;
 import com.ejercicio2.dataBases.repository.VeterinariaRepository;
 
@@ -37,6 +38,12 @@ public class ServiceDB implements ServicioInt{
 	
 	@Autowired
 	PlatilloRepository plar;
+	
+	@Autowired
+	PlazaRepository plaz;
+	
+	@Autowired
+	AplicacionplazaRepository apli;
 
 	@Override
 	public List<Pasteles> buscarPasteles() {
@@ -86,6 +93,26 @@ public class ServiceDB implements ServicioInt{
 	@Override
 	public Platillo guardarPlatillos(Platillo platillo) {
 		return plar.save(platillo);
+	}
+
+	@Override
+	public List<Plaza> buscarPlazas() {
+		return plaz.findAll();
+	}
+
+	@Override
+	public Plaza guardarPlaza(Plaza plaza) {
+		return plaz.save(plaza);
+	}
+
+	@Override
+	public List<Aplicacionplaza> buscarAplicaionPlazas() {
+		return apli.findAll();
+	}
+
+	@Override
+	public Aplicacionplaza guardarAplicacionPlaza(Aplicacionplaza aplicacionplaza) {
+		return apli.save(aplicacionplaza);
 	}
 
 
