@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ejercicio2.dataBases.entity.Pacientemascota;
 import com.ejercicio2.dataBases.entity.Pasteles;
+import com.ejercicio2.dataBases.entity.Platillo;
+import com.ejercicio2.dataBases.entity.Restaurante;
 import com.ejercicio2.dataBases.entity.Veterinaria;
 
 @RestController
@@ -39,6 +41,15 @@ public interface ServicioInt {
 	@PostMapping("/guardarMascota")
 	public Pacientemascota guardarMascota(@RequestBody Pacientemascota pacientemascota);
 	
-	@GetMapping("/obtenerVeterinarias")
-	public ResponseEntity<Page<Veterinaria>> listarVeterinarias(Pageable pageable);
+	@GetMapping("/consultarRestaurantes")
+	public List<Restaurante> buscarRestaurante();
+	
+	@PostMapping("/guardarRestaurante")
+	public Restaurante guardarRestaurante(@RequestBody Restaurante restaurante);
+	
+	@GetMapping("/consultarPlatillos")
+	public List<Platillo> buscarPlatillos();
+	
+	@PostMapping("/guardarPlatillo")
+	public Platillo guardarPlatillos(@RequestBody Platillo platillo);
 }
