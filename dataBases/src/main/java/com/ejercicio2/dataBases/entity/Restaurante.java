@@ -1,6 +1,7 @@
 package com.ejercicio2.dataBases.entity;
 
 import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -24,8 +25,7 @@ public class Restaurante {
 	@Column(name="NUMESTRELLAS")
 	private Integer numestrellas;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "IDRESTAURANTE")
+	@OneToMany(mappedBy="idrestaurante")
     private List<Platillo> platillo;
 
 	public int getId() {

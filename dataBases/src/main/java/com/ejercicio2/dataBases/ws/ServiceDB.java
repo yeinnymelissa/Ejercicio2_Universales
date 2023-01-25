@@ -1,6 +1,7 @@
 package com.ejercicio2.dataBases.ws;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -107,12 +108,77 @@ public class ServiceDB implements ServicioInt{
 
 	@Override
 	public List<Aplicacionplaza> buscarAplicaionPlazas() {
+		
+		for(Aplicacionplaza aplis : apli.findAll()) {
+			if(aplis.getPlaza() == null) {
+				apli.delete(aplis);
+			}
+		}
 		return apli.findAll();
 	}
 
 	@Override
 	public Aplicacionplaza guardarAplicacionPlaza(Aplicacionplaza aplicacionplaza) {
 		return apli.save(aplicacionplaza);
+	}
+
+	@Override
+	public void eliminarPastel(Integer id) {
+		pr.deleteById(id);
+		
+	}
+
+	@Override
+	public void eliminarVeterinaria(Integer id) {
+		vet.deleteById(id);
+		
+	}
+
+	@Override
+	public void eliminarMascota(Integer id) {
+		pm.deleteById(id);
+		
+	}
+
+	@Override
+	public void eliminarRestaurante(Integer id) {
+		
+		Optional<Restaurante> resDel = res.findById(id);
+		
+		if(resDel.isPresent()){
+			
+			List<Platillo> plati = resDel.get().getPlatillo();
+			plar.deleteAll(plati);
+			
+			for(Platillo platillo : plar.findAll()) {
+				System.out.println(platillo.getNombre());
+			}
+			res.delete(resDel.get());
+			
+		}
+		
+		
+		
+		
+	}
+
+	@Override
+	public void eliminarPlatillos(Integer id) {
+		plar.deleteById(id);
+		
+	}
+
+	@Override
+	public void eliminarPlaza(Integer id) {
+
+		plaz.deleteById(id);
+		
+	}
+
+	@Override
+	public void eliminarApli(Integer id) {
+		apli.deleteById(id);
+		
 	}
 
 

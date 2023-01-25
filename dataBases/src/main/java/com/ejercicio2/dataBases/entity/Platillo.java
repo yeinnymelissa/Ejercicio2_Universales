@@ -46,11 +46,14 @@ public class Platillo {
 		this.tipo = tipo;
 	}
 
+	public int getIdrestaurante() {
+		return idrestaurante;
+	}
+
 	public void setIdrestaurante(int idrestaurante) {
 		this.idrestaurante = idrestaurante;
 	}
-	
-	
+
 	
 	
 }
