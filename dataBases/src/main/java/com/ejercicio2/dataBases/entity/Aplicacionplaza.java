@@ -23,7 +23,7 @@ public class Aplicacionplaza {
 	@Column(name="EDAD")
 	private Integer edad;
 	
-	@ManyToOne(optional = false)
+	@ManyToOne
     @JoinColumn(name = "IDPLAZA")
 	private Plaza plaza;
 

@@ -170,13 +170,20 @@ public class ServiceDB implements ServicioInt{
 
 	@Override
 	public void eliminarPlaza(Integer id) {
-
-		plaz.deleteById(id);
+		Optional <Plaza> plaza =  plaz.findById(id);
+		if(plaza.isPresent()) {
+			plaz.delete(plaza.get());
+		}
 		
 	}
 
 	@Override
 	public void eliminarApli(Integer id) {
+		
+		Optional <Aplicacionplaza> aplip =  apli.findById(id);
+		if(aplip.isPresent()) {
+			apli.delete(aplip.get());
+		}
 		apli.deleteById(id);
 		
 	}
