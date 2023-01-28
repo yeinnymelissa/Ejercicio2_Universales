@@ -86,4 +86,19 @@ public interface ServicioInt {
 	
 	@DeleteMapping("/eliminarApli/{id}")
 	public void eliminarApli(@PathVariable("id") Integer id);
+	
+	@GetMapping("/pasteles/empiezanPor/{letra}")
+	public List<Pasteles> buscarPastelesEmpiezan(@PathVariable("letra") String letra);
+	
+	@GetMapping("/pasteles/ordenarDesc/{nombre}")
+	public List<Pasteles> buscarOrdenarDesc(@PathVariable("nombre") String nombre);
+	
+	@GetMapping("/pasteles/ordenarAsc/{nombre}")
+	public List<Pasteles> buscarOrdenarAsc(@PathVariable("nombre") String nombre);
+	
+	@GetMapping("/pasteles/disponible/{dispo}")
+	public List<Pasteles> buscarDisponibilidad(@PathVariable("dispo") String dispo);
+	
+	@GetMapping("/restaurantes/estrellasMayoroIgual/{num}")
+	public List<Restaurante> buscarEstrellas(@PathVariable("num") Integer num);
 }

@@ -188,5 +188,30 @@ public class ServiceDB implements ServicioInt{
 		
 	}
 
+	@Override
+	public List<Pasteles> buscarPastelesEmpiezan(String letra) {
+		return pr.findByNombreStartingWithIgnoreCase(letra);
+	}
+	
+	@Override
+	public List<Pasteles> buscarOrdenarDesc(String nombre) {
+		return pr.findByNombreOrderByIdDesc(nombre);
+	}
+
+	@Override
+	public List<Pasteles> buscarOrdenarAsc(String nombre) {
+		return pr.findByNombreOrderByIdAsc(nombre);
+	}
+
+	@Override
+	public List<Pasteles> buscarDisponibilidad(String dispo) {
+		return pr.findByDisponibleLikeIgnoreCaseOrderByIdAsc(dispo);
+	}
+
+	@Override
+	public List<Restaurante> buscarEstrellas(Integer num) {
+		return res.findByNumestrellasGreaterThanEqualOrderByIdAsc(num);
+	}
+
 
 }
