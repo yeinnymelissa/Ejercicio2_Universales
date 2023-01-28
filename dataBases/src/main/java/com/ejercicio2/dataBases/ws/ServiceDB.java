@@ -1,6 +1,7 @@
 package com.ejercicio2.dataBases.ws;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import com.ejercicio2.dataBases.repository.PlatilloRepository;
 import com.ejercicio2.dataBases.repository.PlazaRepository;
 import com.ejercicio2.dataBases.repository.RestauranteRepository;
 import com.ejercicio2.dataBases.repository.VeterinariaRepository;
+import com.ejercicio2.dataBases.servicios.ServicioGeneral;
 
 @Component
 public class ServiceDB implements ServicioInt{
@@ -45,6 +47,9 @@ public class ServiceDB implements ServicioInt{
 	
 	@Autowired
 	AplicacionplazaRepository apli;
+	
+	@Autowired
+	ServicioGeneral ser;
 
 	@Override
 	public List<Pasteles> buscarPasteles() {
@@ -211,6 +216,11 @@ public class ServiceDB implements ServicioInt{
 	@Override
 	public List<Restaurante> buscarEstrellas(Integer num) {
 		return res.findByNumestrellasGreaterThanEqualOrderByIdAsc(num);
+	}
+
+	@Override
+	public List<Map<String, Object>> hacerJoinRestaurante(Integer num) {
+		return ser.hacerJoinRestaurante(num);
 	}
 
 

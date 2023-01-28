@@ -1,6 +1,7 @@
 package com.ejercicio2.dataBases.inter;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -101,4 +102,7 @@ public interface ServicioInt {
 	
 	@GetMapping("/restaurantes/estrellasMayoroIgual/{num}")
 	public List<Restaurante> buscarEstrellas(@PathVariable("num") Integer num);
+
+	@GetMapping("/restaurantes/buscarPlatillos/{num}")
+	public List<Map<String, Object>> hacerJoinRestaurante(@PathVariable("num") Integer num);
 }
