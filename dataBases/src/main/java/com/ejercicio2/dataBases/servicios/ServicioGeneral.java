@@ -38,18 +38,8 @@ public class ServicioGeneral {
 	}
 	
 	public void insertarRestaurante(Integer id, String nom, Integer numestre){
-		String query = "BEGIN insertarRestaurante(:id, :nom, :estre); END;";
-		
-		SqlParameterSource sps = new MapSqlParameterSource()
-				.addValue("id", id)
-				.addValue("nom", nom)
-				.addValue("estre", numestre);
-		
-		npjt.queryForList(query, sps);
-	}
-	
-	public void insertarRestaurante2(Integer id, String nom, Integer numestre){
-		 jdbcTemplate.update("{call insertarRestaurante(?,?,?)}", id, nom, numestre);
+		String query = "{call insertarRestaurante(?,?,?)}";
+		 jdbcTemplate.update(query, id, nom, numestre);
 	}
 	
 }

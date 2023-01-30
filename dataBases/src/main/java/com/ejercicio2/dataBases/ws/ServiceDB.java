@@ -230,7 +230,7 @@ public class ServiceDB implements ServicioInt{
 
 	@Override
 	public void insertarRestaurante(Integer id, String nom, Integer estre) {
-		ser.insertarRestaurante2(id, nom, estre);
+		ser.insertarRestaurante(id, nom, estre);
 	}
 	
 
