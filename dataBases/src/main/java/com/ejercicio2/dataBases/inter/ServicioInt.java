@@ -105,4 +105,10 @@ public interface ServicioInt {
 
 	@GetMapping("/restaurantes/buscarPlatillos/{num}")
 	public List<Map<String, Object>> hacerJoinRestaurante(@PathVariable("num") Integer num);
+	
+	@GetMapping("/restaurantes/compararEstrellas/{num}/{num2}")
+	public List<Map<String, Object>> compararEstrellasRes(@PathVariable("num") Integer num, @PathVariable("num2") Integer num2);
+	
+	@PostMapping("/restaurantes/insertar/{id}/{nom}/{estre}")
+	public void insertarRestaurante(@PathVariable("id") Integer id, @PathVariable("nom") String nom, @PathVariable("estre") Integer estre);
 }

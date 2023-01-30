@@ -223,5 +223,15 @@ public class ServiceDB implements ServicioInt{
 		return ser.hacerJoinRestaurante(num);
 	}
 
+	@Override
+	public List<Map<String, Object>> compararEstrellasRes(Integer num, Integer num2) {
+		return ser.compararEstrellas(num, num2);
+	}
+
+	@Override
+	public void insertarRestaurante(Integer id, String nom, Integer estre) {
+		ser.insertarRestaurante2(id, nom, estre);
+	}
+	
 
 }
