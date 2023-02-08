@@ -5,6 +5,9 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import com.ejercicio2.dataBases.entity.Aplicacionplaza;
@@ -231,6 +234,30 @@ public class ServiceDB implements ServicioInt{
 	@Override
 	public void insertarRestaurante(Integer id, String nom, Integer estre) {
 		ser.insertarRestaurante(id, nom, estre);
+	}
+
+	@Override
+	public Page<Pasteles> buscarPastelPag(Integer pag, Integer cant) {
+		Pageable paginador = PageRequest.of(pag, cant);
+		return pr.findAll(paginador);
+	}
+
+	@Override
+	public Page<Pasteles> buscarDispoPastelPag(Integer pag, Integer cant) {
+		Pageable paginador = PageRequest.of(pag, cant);
+		return pr.buscarDisponiblePaginado(paginador);
+	}
+
+	@Override
+	public Page<Pasteles> buscarEmpiezaPastelPag(String val, Integer pag) {
+		Pageable paginador = PageRequest.of(pag, 3);
+		return pr.buscarInicioPaginado(paginador, val.toLowerCase());
+	}
+
+	@Override
+	public Page<Restaurante> verEstrellas(Integer num, Integer pag) {
+		Pageable paginador = PageRequest.of(pag, 3);
+		return res.buscarEstrellasPaginado(paginador, num);
 	}
 	
 

@@ -3,6 +3,7 @@ package com.ejercicio2.dataBases.inter;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -111,4 +112,17 @@ public interface ServicioInt {
 	
 	@PostMapping("/restaurantes/insertar/{id}/{nom}/{estre}")
 	public void insertarRestaurante(@PathVariable("id") Integer id, @PathVariable("nom") String nom, @PathVariable("estre") Integer estre);
+	
+	@GetMapping("/pasteles/paginacion/{pag}/{cant}")
+	public Page<Pasteles> buscarPastelPag(@PathVariable("pag") Integer pag, @PathVariable("cant") Integer cant);
+	
+	@GetMapping("/pasteles/paginacion/disponibilidad/{pag}/{cant}")
+	public Page<Pasteles> buscarDispoPastelPag(@PathVariable("pag") Integer pag, @PathVariable("cant") Integer cant);
+	
+	@GetMapping("/pasteles/paginacion/empiezaPor/{val}/{pag}")
+	public Page<Pasteles> buscarEmpiezaPastelPag(@PathVariable("val") String val, @PathVariable("pag") Integer pag);
+	
+	@GetMapping("/restaurantes/buscarPorEstrellas/{num}/{pag}")
+	public Page<Restaurante> verEstrellas(@PathVariable("num") Integer num, @PathVariable("pag") Integer pag);
+	
 }
