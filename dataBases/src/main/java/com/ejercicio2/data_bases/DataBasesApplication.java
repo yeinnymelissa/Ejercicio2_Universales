@@ -1,4 +1,4 @@
-package com.ejercicio2.dataBases;
+package com.ejercicio2.data_bases;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

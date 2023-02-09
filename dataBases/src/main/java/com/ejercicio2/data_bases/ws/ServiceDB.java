@@ -1,4 +1,4 @@
-package com.ejercicio2.dataBases.ws;
+package com.ejercicio2.data_bases.ws;
 
 import java.util.List;
 import java.util.Map;
@@ -10,22 +10,22 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
-import com.ejercicio2.dataBases.entity.Aplicacionplaza;
-import com.ejercicio2.dataBases.entity.Pacientemascota;
-import com.ejercicio2.dataBases.entity.Pasteles;
-import com.ejercicio2.dataBases.entity.Platillo;
-import com.ejercicio2.dataBases.entity.Plaza;
-import com.ejercicio2.dataBases.entity.Restaurante;
-import com.ejercicio2.dataBases.entity.Veterinaria;
-import com.ejercicio2.dataBases.inter.ServicioInt;
-import com.ejercicio2.dataBases.repository.AplicacionplazaRepository;
-import com.ejercicio2.dataBases.repository.PacientemascotaRepository;
-import com.ejercicio2.dataBases.repository.PastelesRepository;
-import com.ejercicio2.dataBases.repository.PlatilloRepository;
-import com.ejercicio2.dataBases.repository.PlazaRepository;
-import com.ejercicio2.dataBases.repository.RestauranteRepository;
-import com.ejercicio2.dataBases.repository.VeterinariaRepository;
-import com.ejercicio2.dataBases.servicios.ServicioGeneral;
+import com.ejercicio2.data_bases.entity.Aplicacionplaza;
+import com.ejercicio2.data_bases.entity.Pacientemascota;
+import com.ejercicio2.data_bases.entity.Pasteles;
+import com.ejercicio2.data_bases.entity.Platillo;
+import com.ejercicio2.data_bases.entity.Plaza;
+import com.ejercicio2.data_bases.entity.Restaurante;
+import com.ejercicio2.data_bases.entity.Veterinaria;
+import com.ejercicio2.data_bases.inter.ServicioInt;
+import com.ejercicio2.data_bases.repository.AplicacionplazaRepository;
+import com.ejercicio2.data_bases.repository.PacientemascotaRepository;
+import com.ejercicio2.data_bases.repository.PastelesRepository;
+import com.ejercicio2.data_bases.repository.PlatilloRepository;
+import com.ejercicio2.data_bases.repository.PlazaRepository;
+import com.ejercicio2.data_bases.repository.RestauranteRepository;
+import com.ejercicio2.data_bases.repository.VeterinariaRepository;
+import com.ejercicio2.data_bases.servicios.ServicioGeneral;
 
 @Component
 public class ServiceDB implements ServicioInt{
@@ -158,9 +158,6 @@ public class ServiceDB implements ServicioInt{
 			List<Platillo> plati = resDel.get().getPlatillo();
 			plar.deleteAll(plati);
 			
-			for(Platillo platillo : plar.findAll()) {
-				System.out.println(platillo.getNombre());
-			}
 			res.delete(resDel.get());
 			
 		}

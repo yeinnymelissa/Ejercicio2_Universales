@@ -1,4 +1,4 @@
-package com.ejercicio2.dataBases.inter;
+package com.ejercicio2.data_bases.inter;
 
 import java.util.List;
 import java.util.Map;
@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ejercicio2.dataBases.entity.Aplicacionplaza;
-import com.ejercicio2.dataBases.entity.Pacientemascota;
-import com.ejercicio2.dataBases.entity.Pasteles;
-import com.ejercicio2.dataBases.entity.Platillo;
-import com.ejercicio2.dataBases.entity.Plaza;
-import com.ejercicio2.dataBases.entity.Restaurante;
-import com.ejercicio2.dataBases.entity.Veterinaria;
+import com.ejercicio2.data_bases.entity.Aplicacionplaza;
+import com.ejercicio2.data_bases.entity.Pacientemascota;
+import com.ejercicio2.data_bases.entity.Pasteles;
+import com.ejercicio2.data_bases.entity.Platillo;
+import com.ejercicio2.data_bases.entity.Plaza;
+import com.ejercicio2.data_bases.entity.Restaurante;
+import com.ejercicio2.data_bases.entity.Veterinaria;
 
 @RestController
 @RequestMapping("/service")

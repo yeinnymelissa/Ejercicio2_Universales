@@ -1,4 +1,4 @@
-package com.ejercicio2.dataBases.entity;
+package com.ejercicio2.data_bases.entity;
 
 import java.util.List;
 import jakarta.persistence.Column;

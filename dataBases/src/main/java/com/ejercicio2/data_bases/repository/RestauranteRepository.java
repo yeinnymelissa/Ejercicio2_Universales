@@ -1,4 +1,4 @@
-package com.ejercicio2.dataBases.repository;
+package com.ejercicio2.data_bases.repository;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.ejercicio2.dataBases.entity.Restaurante;
+import com.ejercicio2.data_bases.entity.Restaurante;
 
 @Repository("restauranteRepository")
 public interface RestauranteRepository extends JpaRepository<Restaurante, Integer>{

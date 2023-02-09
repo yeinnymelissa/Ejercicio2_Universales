@@ -1,4 +1,4 @@
-package com.ejercicio2.dataBases.servicios;
+package com.ejercicio2.data_bases.servicios;
 
 import java.util.List;
 import java.util.Map;

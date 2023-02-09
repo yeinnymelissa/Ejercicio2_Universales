@@ -1,4 +1,4 @@
-package com.ejercicio2.dataBases.entity;
+package com.ejercicio2.data_bases.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -34,9 +34,6 @@ public class Pacientemascota {
     @JoinColumn(name="IDVETERINARIO")
 	@JsonProperty(access = Access.WRITE_ONLY)
     private Veterinaria veterinaria;
-
-	public Pacientemascota() {
-	}
 	
 	public int getId() {
 		return id;

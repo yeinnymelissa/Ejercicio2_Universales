@@ -1,4 +1,4 @@
-package com.ejercicio2.dataBases.entity;
+package com.ejercicio2.data_bases.entity;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -29,10 +29,6 @@ public class Veterinaria{
 	
 	@OneToMany(mappedBy="veterinaria", cascade = CascadeType.ALL)
     private Set<Pacientemascota> pacientemascota = new HashSet<>();
-	
-
-	public Veterinaria() {
-	}
 
 	public int getId() {
 		return id;

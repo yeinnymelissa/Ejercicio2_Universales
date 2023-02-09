@@ -1,4 +1,4 @@
-package com.ejercicio2.dataBases.entity;
+package com.ejercicio2.data_bases.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,9 +6,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="PLATILLO")
-public class Platillo {
-
+@Table(name="PLAZA")
+public class Plaza {
+	
 	@Id
 	@Column(name="ID")
 	private int id;
@@ -16,11 +16,8 @@ public class Platillo {
 	@Column(name="NOMBRE")
 	private String nombre;
 	
-	@Column(name="TIPO")
-	private String tipo;
-	
-	@Column(name="IDRESTAURANTE")
-	private int idrestaurante;
+	@Column(name="VACANTES")
+	private Integer vacantes;
 
 	public int getId() {
 		return id;
@@ -38,22 +35,13 @@ public class Platillo {
 		this.nombre = nombre;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public Integer getVacantes() {
+		return vacantes;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setVacantes(Integer vacantes) {
+		this.vacantes = vacantes;
 	}
-
-	public int getIdrestaurante() {
-		return idrestaurante;
-	}
-
-	public void setIdrestaurante(int idrestaurante) {
-		this.idrestaurante = idrestaurante;
-	}
-
 	
 	
 }
