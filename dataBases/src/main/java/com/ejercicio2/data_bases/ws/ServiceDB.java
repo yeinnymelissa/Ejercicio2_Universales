@@ -10,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
+import com.ejercicio2.data_bases.dto.SalidaFuncionDTO;
 import com.ejercicio2.data_bases.entity.Aplicacionplaza;
 import com.ejercicio2.data_bases.entity.Pacientemascota;
 import com.ejercicio2.data_bases.entity.Pasteles;
@@ -26,6 +27,8 @@ import com.ejercicio2.data_bases.repository.PlazaRepository;
 import com.ejercicio2.data_bases.repository.RestauranteRepository;
 import com.ejercicio2.data_bases.repository.VeterinariaRepository;
 import com.ejercicio2.data_bases.servicios.ServicioGeneral;
+
+
 
 @Component
 public class ServiceDB implements ServicioInt{
@@ -161,10 +164,6 @@ public class ServiceDB implements ServicioInt{
 			res.delete(resDel.get());
 			
 		}
-		
-		
-		
-		
 	}
 
 	@Override
@@ -256,6 +255,11 @@ public class ServiceDB implements ServicioInt{
 		Pageable paginador = PageRequest.of(pag, 3);
 		return res.buscarEstrellasPaginado(paginador, num);
 	}
-	
 
+	@Override
+	public SalidaFuncionDTO ejectuarFuncion(String texto, int numero) {
+		return ser.funcionBd(texto, numero);
+	}
+	
+	
 }

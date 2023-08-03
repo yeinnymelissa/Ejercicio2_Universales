@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ejercicio2.data_bases.dto.SalidaFuncionDTO;
 import com.ejercicio2.data_bases.entity.Aplicacionplaza;
 import com.ejercicio2.data_bases.entity.Pacientemascota;
 import com.ejercicio2.data_bases.entity.Pasteles;
@@ -125,4 +126,6 @@ public interface ServicioInt {
 	@GetMapping("/restaurantes/buscarPorEstrellas/{num}/{pag}")
 	public Page<Restaurante> verEstrellas(@PathVariable("num") Integer num, @PathVariable("pag") Integer pag);
 	
+	@GetMapping("/funcion/{texto}/{numero}")
+	public SalidaFuncionDTO ejectuarFuncion(@PathVariable String texto,@PathVariable int numero);
 }
